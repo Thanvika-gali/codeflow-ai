@@ -32,6 +32,7 @@ Designed with reusable components and clean UI, suitable for SaaS or startup web
 
 ## 📂 Project Structure
 
+```plaintext
 codeflow-ai/
 │
 ├── public/
@@ -61,6 +62,7 @@ codeflow-ai/
 ├── vite.config.js
 ├── package.json
 └── README.md
+```
 
 ---
 
