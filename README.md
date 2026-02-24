@@ -30,6 +30,40 @@ Designed with reusable components and clean UI, suitable for SaaS or startup web
 
 ---
 
+## 📂 Project Structure
+
+codeflow-ai/
+│
+├── public/
+│   ├── logo.png
+│   └── vite.svg
+│
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   │
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Features.jsx
+│   │   ├── Pricing.jsx
+│   │   ├── Testimonials.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── data/
+│   │   └── CodeExample.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── index.html
+├── vite.config.js
+├── package.json
+└── README.md
+
+---
+
 ## 📸 Screenshots
 
 <p align="center">
