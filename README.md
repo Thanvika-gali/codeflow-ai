@@ -31,12 +31,9 @@ Designed with reusable components and clean UI, suitable for SaaS or startup web
 ---
 
 ## 📸 Screenshots
-## 📸 Screenshots
 
 <p align="center">
   <img width="1504" height="832" alt="image" src="https://github.com/user-attachments/assets/ae7e614b-cfd2-40f2-adcf-6bbbc107eca4" />
-  <img width="1520" height="850" alt="image" src="https://github.com/user-attachments/assets/e1c326ab-5ffd-4e6e-aa5a-1547029bffe4" />
-
 </p>
 
 ---
