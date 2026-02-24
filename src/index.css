@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+
+
+
+@layer utilities {
+    .animate-in {
+        animation-fill-mode: both;
+    }
+    .slide-in-from-top {
+        animation-name: slideInFromTop;
+    }
+    .duration-200 {
+        animation-duration: 200ms;
+    }
+    .duration-300 {
+        animation-duration: 300ms;
+    }
+
+
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-1cm);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+/* Page-wide gradient glows and utility animations */
+.glow-bg::before,
+.glow-bg::after {
+    content: "";
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+    opacity: 0.35;
+}
+.glow-bg::before {
+    width: 520px;
+    height: 520px;
+    left: -120px;
+    top: -120px;
+    background: radial-gradient(circle at 20% 20%, rgba(59,130,246,0.22), transparent 40%);
+    animation: pulseGlow 6s ease-in-out infinite;
+}
+.glow-bg::after {
+    width: 680px;
+    height: 680px;
+    right: -160px;
+    bottom: -160px;
+    background: radial-gradient(circle at 80% 80%, rgba(6,182,212,0.15), transparent 35%);
+    animation: pulseGlow 7s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.28 }
+    50% { transform: scale(1.08); opacity: 0.42 }
+    100% { transform: scale(1); opacity: 0.28 }
+}
+
+/* make sure body text is white and hide horizontal overflow by default */
+body { color: #fff; overflow-x: hidden; }
+
+/* subtle UI motion utilities */
+.btn-transition { transition: transform 180ms cubic-bezier(.2,.9,.2,1), background-color 180ms; }
+.btn-transition:hover { transform: translateY(-2px); }
+
+.card-hover { transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms, border-color 220ms; }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(2,6,23,0.6); border-color: rgba(255,255,255,0.12); }
+
+/* subtle fade-up entrance used in hero */
+.fade-up { opacity: 0; transform: translateY(8px); animation: fadeUp 520ms ease forwards; }
+.fade-up.delay-200 { animation-delay: 200ms; }
+.fade-up.delay-350 { animation-delay: 350ms; }
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
