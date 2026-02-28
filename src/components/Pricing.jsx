@@ -35,7 +35,7 @@ export default function Pricing() {
 					{PLANS.map((p) => (
 						<div
 							key={p.id}
-							className={`p-6 rounded-2xl border bg-white/4 backdrop-blur-md border-white/6 card-hover ${p.popular ? 'transform scale-105 ring-2 ring-blue-400/25 shadow-lg' : ''}`}
+							className={`p-6 rounded-2xl border bg-white/4 dark:bg-gray-200/10 backdrop-blur-md border-white/6 dark:border-gray-300/20 card-hover ${p.popular ? 'transform scale-105 ring-2 ring-blue-400/25 shadow-lg' : ''}`}
 						>
 							{p.popular && (
 								<div className="mb-3 inline-block px-3 py-1 rounded-full text-sm bg-blue-500/25 text-blue-200">Most popular</div>
@@ -45,9 +45,9 @@ export default function Pricing() {
 								<div className="text-3xl font-bold">{p.price}</div>
 								<div className="text-sm text-gray-300">{p.cadence}</div>
 							</div>
-							<div className="text-sm text-gray-300 mt-1">{p.tagline}</div>
+							<div className="text-sm text-gray-700 dark:text-gray-300 mt-1">{p.tagline}</div>
 
-							<ul className="mt-4 space-y-2 text-gray-300">
+							<ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
 								{p.perks.map((t) => (
 									<li key={t} className="flex items-start gap-2"> 
 										<span className="text-blue-300">✓</span>
@@ -66,7 +66,7 @@ export default function Pricing() {
 					))}
 				</div>
 
-				<div className="mt-6 text-sm text-gray-300">
+				<div className="mt-6 text-sm text-gray-700 dark:text-gray-300">
 					Need a custom plan? <a href="#" className="text-white underline">Contact sales</a>
 				</div>
 			</div>

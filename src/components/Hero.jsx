@@ -5,15 +5,22 @@ export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    let ticking = false;
     const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setMousePosition({ x: e.clientX, y: e.clientY });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 px-6 md:px-12">
+    <section className="relative min-h-screen flex items-center pt-20 px-6 md:px-12 bg-white/5 text-slate-900 dark:bg-slate-900 dark:text-white">
 
       {/* mouse-following glow */}
       <div
@@ -31,11 +38,11 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center gap-10">
         {/* Text column */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight fade-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight fade-up text-slate-900 dark:text-white">
             Code Faster. Build
-            <span className="ml-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">Better.</span>
+            <span className="ml-2 bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-cyan-300">Better.</span>
           </h1>
-          <p className="mt-4 text-gray-300 max-w-xl mx-auto lg:mx-0 fade-up delay-200">
+          <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 fade-up delay-200">
             Accelerate your development workflow with intelligent code completion, automated testing, and smart debugging. Ship production-ready code 10x faster.
           </p>
 
@@ -44,7 +51,7 @@ export default function Hero() {
               <Play className="w-4 h-4" />
               Start Coding Free
             </button>
-            <button className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white px-4 py-2 rounded-md border border-white/10 btn-transition">
+            <button className="inline-flex items-center gap-2 bg-white/5 dark:bg-gray-200/20 hover:bg-white/10 dark:hover:bg-gray-200/30 text-white dark:text-slate-900 px-4 py-2 rounded-md border border-white/10 dark:border-gray-300/20 btn-transition">
               Watch Demo
               <ArrowRight className="w-4 h-4" />
             </button>

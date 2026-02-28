@@ -68,6 +68,9 @@
 /* make sure body text is white and hide horizontal overflow by default */
 body { color: #fff; overflow-x: hidden; }
 
+/* when dark class is present we want dark text for light theme */
+.dark body { color: #111; }
+
 /* subtle UI motion utilities */
 .btn-transition { transition: transform 180ms cubic-bezier(.2,.9,.2,1), background-color 180ms; }
 .btn-transition:hover { transform: translateY(-2px); }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 const SAMPLE = [
   {
@@ -74,7 +74,7 @@ export default function Features() {
               </div>
 
               <div className="w-full md:w-1/2 flex justify-center">
-                <div className="relative z-10 w-full bg-white/5 backdrop-blur-xl rounded-2xl p-0 shadow-2xl border border-white/10 overflow-hidden">
+                <div className="relative z-10 w-full bg-white/5 dark:bg-gray-200/10 backdrop-blur-xl rounded-2xl p-0 shadow-2xl border border-white/10 dark:border-gray-300/20 overflow-hidden">
                   <div className="flex items-center justify-between px-4 py-3 bg-white/5 border-b border-white/10">
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 rounded-full bg-red-500" />

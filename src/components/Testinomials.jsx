@@ -28,13 +28,13 @@ export default function Testimonials() {
 				{/* Featured testimonial */}
 				<div className="grid gap-6 md:grid-cols-3">
 					{TESTIMONIALS.map((t) => (
-						<div key={t.name} className="p-8 rounded-2xl bg-white/5 border border-white/8 shadow-lg">
+						<div key={t.name} className="p-8 rounded-2xl bg-white/5 dark:bg-gray-200/10 border border-white/8 dark:border-gray-300/20 shadow-lg">
 							<div className="flex items-start gap-4">
-								<img src={t.image} alt={t.name} className="w-20 h-20 rounded-full object-cover flex-shrink-0" />
+								<img loading="lazy" src={t.image} alt={t.name} className="w-20 h-20 rounded-full object-cover shrink-0" />
 								<div>
 									<div className="text-lg font-semibold">{t.name}</div>
-									<div className="text-sm text-gray-300">{t.role}</div>
-									<p className="mt-3 text-gray-200">“{t.quote}”</p>
+									<div className="text-sm text-gray-700 dark:text-gray-300">{t.role}</div>
+									<p className="mt-3 text-gray-700 dark:text-gray-200">“{t.quote}”</p>
 								</div>
 							</div>
 						</div>

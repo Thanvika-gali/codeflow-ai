@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- early theme detection to avoid flash of unthemed content -->
+    <script>
+      (function() {
+        try {
+          const t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch(e) {}
+      })();
+    </script>
     <title>modern-ui</title>
   </head>
   <body>
